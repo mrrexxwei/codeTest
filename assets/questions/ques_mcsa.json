@@ -21,7 +21,7 @@
     "type": "mc",
     "text": "What is the result of 26 % 5 ?",
     "options": ["3", "1", "4", "0"],
-    "answer": "6"
+    "answer": "1"
   },
   {
     "type": "mc",
