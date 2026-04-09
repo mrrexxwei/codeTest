@@ -210,9 +210,9 @@
       padding: 16px 20px;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
-      font-size: 13px;
+      font-size: 16px;
       line-height: 1.6;
-      color: var(--text);
+      color: #a1d4b8;
     }
 
     .task-description h2 {
@@ -259,7 +259,12 @@
     }
 
     iframe#preview {
-      flex: 1; border: none; width: 100%; background: #fff;
+      /* flex: 1; border: none; width: 100%; background: #fff; */
+      flex: 1; 
+      border: none; 
+      width: 100%; 
+      background: var(--bg); 
+      color: white;
     }
 
     /* ── CONSOLE ── */
@@ -420,7 +425,6 @@
   <title>My Page</title>
 </head>
 <body>
-    <p>Task 1: Create a title element. It has yellow background and green text. And it only takes up as much space as needed. (15 points)<br/><br/>Task 2: Create two boxes with different sizes. The bigger box with red color and white border, and the smaller box has color blue. The smaller one is within the bigger one. (15 points)<br/><br/>Task 3: Make the bigger box center horizontally to the pane.(extra 5 points)</p>
     
 
 </body>
@@ -440,7 +444,7 @@
         <div class="editor-wrap">
           <div class="line-nums" id="ln-css">1</div>
           <textarea class="code-input css-ta" id="editor-css" spellcheck="false" autocorrect="off" autocapitalize="off">
-body { min-height: 100vh; background: #0f1117; font-family: system-ui, sans-serif; color: #a7d1c0 }
+
 </textarea>
         </div>
       </div>
@@ -457,7 +461,7 @@ body { min-height: 100vh; background: #0f1117; font-family: system-ui, sans-seri
         <div class="editor-wrap">
           <div class="line-nums" id="ln-js">1</div>
           <textarea class="code-input js-ta" id="editor-js" spellcheck="false" autocorrect="off" autocapitalize="off">
-/* JavaScript not needed. Please collapse the pane using "−" button. */
+
           </textarea>
         </div>
       </div>
@@ -475,7 +479,7 @@ body { min-height: 100vh; background: #0f1117; font-family: system-ui, sans-seri
           <span class="preview-label">preview</span>
           <span class="preview-url" id="preview-url">sandbox://preview</span>
         </div>
-        <iframe id="preview" sandbox="allow-scripts allow-modals"></iframe>
+        <iframe id="preview" style="color: #a1d4b8;" sandbox="allow-scripts allow-modals"></iframe>
         <!-- CONSOLE -->
         <div class="console-pane hidden" id="console-pane">
           <div class="console-header">
@@ -500,7 +504,7 @@ body { min-height: 100vh; background: #0f1117; font-family: system-ui, sans-seri
 <div class="modal-backdrop" id="submit-modal">
   <div class="modal">
     <div class="modal-title">Submit Code</div>
-    <div class="modal-sub">Ready to send your HTML, CSS &amp; JS code?</div>
+    <div class="modal-sub">Ready to send your code?</div>
 
     <div class="modal-row field-row">
       <div>
@@ -630,7 +634,7 @@ Object.entries(editors).forEach(([lang, ta]) => {
   });
   ta.addEventListener('paste', e => {
     e.preventDefault();
-    showToast('Pasting is disabled — type your code ✍️');
+    showToast('🚫Pasting not allowed🚫');
   });
 });
 
@@ -651,7 +655,10 @@ function runCode() {
 <html>
 <head>
 <meta charset="UTF-8"/>
-<style>${css}</style>
+<style>
+body { color: #ffffff; }
+${css}
+</style>
 </head>
 <body>
 ${extractBody(html)}
